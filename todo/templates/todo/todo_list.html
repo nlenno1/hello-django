@@ -9,5 +9,19 @@
 <body>
     <h1>Things I Need To Do:</h1>
 
+    <table>
+        <th>Item Name</th>
+        {% for item in items %}
+            <tr>
+                {% if item.done %}
+                <td><del>{{ item.name }}</del></td>
+                {% else %}
+                <td>{{ item.name }}</td>
+                {% endif %}
+            </tr>
+        {% empty %}
+        <tr><td>You Have Nothing To Do!</td></tr>
+        {% endfor %}    
+    </table>
 </body>
 </html>
